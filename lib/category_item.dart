@@ -5,15 +5,16 @@ import 'package:meals_app/category_meals_screen.dart';
 /// Created by Luthfan Maftuh on 1/18/2020.
 ///
 class CategoryItem extends StatelessWidget {
+  final String id;
   final String title;
   final Color color;
 
-  const CategoryItem({Key key, @required this.title, @required this.color}) : super(key: key);
+  const CategoryItem({Key key, @required this.id, @required this.title, @required this.color}) : super(key: key);
 
   void selectCategory(BuildContext ctx) {
     Navigator.of(ctx).push(
       MaterialPageRoute(
-        builder: (_) => CategoryMealsScreen(),
+        builder: (_) => CategoryMealsScreen(id: id, title: title),
       ),
     );
   }
