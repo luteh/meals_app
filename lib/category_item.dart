@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:meals_app/category_meals_screen.dart';
 
 ///
 /// Created by Luthfan Maftuh on 1/18/2020.
@@ -12,10 +11,12 @@ class CategoryItem extends StatelessWidget {
   const CategoryItem({Key key, @required this.id, @required this.title, @required this.color}) : super(key: key);
 
   void selectCategory(BuildContext ctx) {
-    Navigator.of(ctx).push(
-      MaterialPageRoute(
-        builder: (_) => CategoryMealsScreen(id: id, title: title),
-      ),
+    Navigator.of(ctx).pushNamed(
+      '/category-meals',
+      arguments: {
+        'id': id,
+        'title': title,
+      },
     );
   }
 
